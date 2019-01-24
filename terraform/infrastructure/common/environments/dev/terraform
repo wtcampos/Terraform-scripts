@@ -1,0 +1,6 @@
+#!/bin/bash
+
+TERRAFORM=${TERRAFORM:terraform}
+
+$TERRAFORM validate  -var account=${AWS_ACCOUNT_ID} || exit 1
+$TERRAFORM $@ -var account=${AWS_ACCOUNT_ID} || exit 2
